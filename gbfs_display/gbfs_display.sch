@@ -49,7 +49,7 @@ U 1 1 5A077711
 P 6050 2850
 F 0 "U1" H 6050 3350 60  0000 C CNN
 F 1 "esp8266_thing_dev" H 6050 3450 60  0000 C CNN
-F 2 "" H 6050 2750 60  0001 C CNN
+F 2 "gbfs_display:esp8266_thing" H 6050 2750 60  0001 C CNN
 F 3 "" H 6050 2750 60  0001 C CNN
 	1    6050 2850
 	1    0    0    -1  
@@ -60,7 +60,7 @@ U 1 1 5A07797C
 P 4300 2250
 F 0 "LLC1" H 4300 2700 60  0000 C CNN
 F 1 "Logic_Level_BiDirectional" H 4300 2850 60  0000 C CNN
-F 2 "" H 4300 2150 60  0001 C CNN
+F 2 "gbfs_display:Logic_Level_Bidirectional" H 4300 2150 60  0001 C CNN
 F 3 "" H 4300 2150 60  0001 C CNN
 	1    4300 2250
 	-1   0    0    1   
@@ -71,90 +71,13 @@ U 1 1 5A077C81
 P 2850 3150
 F 0 "NP1" H 2850 3400 60  0000 C CNN
 F 1 "Neopixel" H 2850 3700 60  0000 C CNN
-F 2 "" H 2850 3050 60  0001 C CNN
+F 2 "Wire_Pads:SolderWirePad_3x_2-5mmDrill" H 2850 3050 60  0001 C CNN
 F 3 "" H 2850 3050 60  0001 C CNN
 	1    2850 3150
 	1    0    0    -1  
 $EndComp
-$Comp
-L Neopixel NP2
-U 1 1 5A077CB3
-P 2850 3550
-F 0 "NP2" H 2850 3800 60  0000 C CNN
-F 1 "Neopixel" H 2850 4100 60  0000 C CNN
-F 2 "" H 2850 3450 60  0001 C CNN
-F 3 "" H 2850 3450 60  0001 C CNN
-	1    2850 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Neopixel NP3
-U 1 1 5A077CD9
-P 2850 3950
-F 0 "NP3" H 2850 4200 60  0000 C CNN
-F 1 "Neopixel" H 2850 4500 60  0000 C CNN
-F 2 "" H 2850 3850 60  0001 C CNN
-F 3 "" H 2850 3850 60  0001 C CNN
-	1    2850 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Neopixel NP4
-U 1 1 5A077D04
-P 2850 4350
-F 0 "NP4" H 2850 4600 60  0000 C CNN
-F 1 "Neopixel" H 2850 4900 60  0000 C CNN
-F 2 "" H 2850 4250 60  0001 C CNN
-F 3 "" H 2850 4250 60  0001 C CNN
-	1    2850 4350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Neopixel NP5
-U 1 1 5A077D34
-P 2850 4750
-F 0 "NP5" H 2850 5000 60  0000 C CNN
-F 1 "Neopixel" H 2850 5300 60  0000 C CNN
-F 2 "" H 2850 4650 60  0001 C CNN
-F 3 "" H 2850 4650 60  0001 C CNN
-	1    2850 4750
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3250 2800 3350 2800
-Wire Wire Line
-	3350 2800 3350 3100
-Wire Wire Line
-	3350 3100 3250 3100
-Wire Wire Line
-	3250 3200 3350 3200
-Wire Wire Line
-	3350 3200 3350 3500
-Wire Wire Line
-	3350 3500 3250 3500
-Wire Wire Line
-	3250 3600 3350 3600
-Wire Wire Line
-	3350 3600 3350 3900
-Wire Wire Line
-	3350 3900 3250 3900
-Wire Wire Line
-	3250 4000 3350 4000
-Wire Wire Line
-	3350 4000 3350 4300
-Wire Wire Line
-	3350 4300 3250 4300
-Wire Wire Line
-	2350 3200 2450 3200
-Wire Wire Line
-	2350 3600 2450 3600
-Connection ~ 2350 3200
-Wire Wire Line
-	2350 4000 2450 4000
-Connection ~ 2350 3600
-Wire Wire Line
-	2350 4400 2450 4400
-Connection ~ 2350 4000
 Connection ~ 2350 2800
 Wire Wire Line
 	3750 2700 3250 2700
@@ -164,7 +87,6 @@ Wire Wire Line
 	6750 2400 6600 2400
 Wire Wire Line
 	3750 2400 3550 2400
-NoConn ~ 3250 4400
 NoConn ~ 6600 2600
 NoConn ~ 6600 2700
 NoConn ~ 6600 2800
@@ -260,8 +182,6 @@ Wire Wire Line
 	2450 2800 2350 2800
 Wire Wire Line
 	3700 2500 3750 2500
-Wire Wire Line
-	2350 2400 2350 4400
 $Comp
 L +5V #PWR07
 U 1 1 5A07AABD
@@ -279,24 +199,11 @@ U 1 1 5A07B05B
 P 2200 2500
 F 0 "C1" V 2250 2550 50  0000 L CNN
 F 1 "1000µF" V 2350 2350 50  0000 L CNN
-F 2 "" H 2200 2500 50  0000 C CNN
+F 2 "Capacitors_ThroughHole:CP_Radial_D10.0mm_P5.00mm" H 2200 2500 50  0001 C CNN
 F 3 "" H 2200 2500 50  0000 C CNN
 	1    2200 2500
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2050 2400 2050 4300
-Wire Wire Line
-	2050 4300 2450 4300
-Wire Wire Line
-	2450 3900 2050 3900
-Connection ~ 2050 3900
-Wire Wire Line
-	2450 3500 2050 3500
-Connection ~ 2050 3500
-Wire Wire Line
-	2450 3100 2050 3100
-Connection ~ 2050 3100
 Wire Wire Line
 	2450 2700 2050 2700
 Connection ~ 2050 2700
@@ -308,7 +215,7 @@ U 1 1 5A07B57F
 P 5150 2700
 F 0 "R1" V 5230 2700 50  0000 C CNN
 F 1 "470Ω" V 5150 2700 50  0000 C CNN
-F 2 "" V 5080 2700 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 5080 2700 50  0001 C CNN
 F 3 "" H 5150 2700 50  0000 C CNN
 	1    5150 2700
 	0    1    1    0   
@@ -323,4 +230,9 @@ Wire Wire Line
 	5000 2700 4850 2700
 Wire Wire Line
 	5500 2500 4850 2500
+NoConn ~ 3350 2800
+Wire Wire Line
+	2350 2800 2350 2400
+Wire Wire Line
+	2050 2700 2050 2400
 $EndSCHEMATC
