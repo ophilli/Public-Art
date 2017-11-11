@@ -71,22 +71,11 @@ U 1 1 5A077C81
 P 2850 3150
 F 0 "NP1" H 2850 3400 60  0000 C CNN
 F 1 "Neopixel" H 2850 3700 60  0000 C CNN
-F 2 "Wire_Pads:SolderWirePad_3x_2-5mmDrill" H 2850 3050 60  0001 C CNN
+F 2 "gbfs_display:NeoConnect_SolderWirePad_3x_2-5mmDrill" H 2850 3050 60  0001 C CNN
 F 3 "" H 2850 3050 60  0001 C CNN
 	1    2850 3150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3250 2800 3350 2800
-Connection ~ 2350 2800
-Wire Wire Line
-	3750 2700 3250 2700
-Wire Wire Line
-	6750 1900 6750 2400
-Wire Wire Line
-	6750 2400 6600 2400
-Wire Wire Line
-	3750 2400 3550 2400
 NoConn ~ 6600 2600
 NoConn ~ 6600 2700
 NoConn ~ 6600 2800
@@ -173,15 +162,6 @@ F 3 "" H 5150 2350 50  0000 C CNN
 	1    5150 2350
 	-1   0    0    1   
 $EndComp
-Connection ~ 5150 2400
-Wire Wire Line
-	6600 2500 6950 2500
-Wire Wire Line
-	6950 2500 6950 1900
-Wire Wire Line
-	2450 2800 2350 2800
-Wire Wire Line
-	3700 2500 3750 2500
 $Comp
 L +5V #PWR07
 U 1 1 5A07AABD
@@ -204,11 +184,6 @@ F 3 "" H 2200 2500 50  0000 C CNN
 	1    2200 2500
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2450 2700 2050 2700
-Connection ~ 2050 2700
-Connection ~ 2050 2500
-Connection ~ 2350 2500
 $Comp
 L R R1
 U 1 1 5A07B57F
@@ -221,18 +196,41 @@ F 3 "" H 5150 2700 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	5500 2400 4850 2400
-Wire Wire Line
-	5150 2350 5150 2400
-Wire Wire Line
-	5500 2700 5300 2700
-Wire Wire Line
-	5000 2700 4850 2700
-Wire Wire Line
-	5500 2500 4850 2500
-NoConn ~ 3350 2800
+	2050 2700 2050 2400
 Wire Wire Line
 	2350 2800 2350 2400
 Wire Wire Line
-	2050 2700 2050 2400
+	5500 2500 4850 2500
+Wire Wire Line
+	5000 2700 4850 2700
+Wire Wire Line
+	5500 2700 5300 2700
+Wire Wire Line
+	5150 2350 5150 2400
+Wire Wire Line
+	5500 2400 4850 2400
+Connection ~ 2350 2500
+Connection ~ 2050 2500
+Connection ~ 2050 2700
+Wire Wire Line
+	2450 2700 2050 2700
+Wire Wire Line
+	3700 2500 3750 2500
+Wire Wire Line
+	2450 2800 2350 2800
+Wire Wire Line
+	6950 2500 6950 1900
+Wire Wire Line
+	6600 2500 6950 2500
+Connection ~ 5150 2400
+Wire Wire Line
+	3750 2400 3550 2400
+Wire Wire Line
+	6750 2400 6600 2400
+Wire Wire Line
+	6750 1900 6750 2400
+Wire Wire Line
+	3750 2700 3250 2700
+Connection ~ 2350 2800
+NoConn ~ 3250 2800
 $EndSCHEMATC
