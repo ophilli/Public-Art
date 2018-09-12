@@ -179,10 +179,10 @@ void loop() {
   }
 
   for(int i = 0; i < 5; i++) {
-    JsonObject& fuckYou = _stations[i];
-    Serial.println(fuckYou.get<String>((String)"station_id"));
-    Serial.println(fuckYou.get<String>((String)"num_bikes_available"));
-    Serial.println(fuckYou.get<String>((String)"num_docks_available"));//[(String)"station_id"]);
+    JsonObject& _station = _stations[i];
+    Serial.println(_station.get<String>((String)"station_id"));
+    Serial.println(_station.get<String>((String)"num_bikes_available"));
+    Serial.println(_station.get<String>((String)"num_docks_available"));//[(String)"station_id"]);
   }
 
   // There are 16 pixels per ring - and 5 rings
@@ -193,9 +193,9 @@ void loop() {
   // 64 - 79
 
   for(int i = 0; i < 5; i++) {
-    JsonObject& fuckYou = _stations[i];
+    JsonObject& _station = _stations[i];
     int j = 0;
-    for(; j < fuckYou.get<int>("num_bikes_available") ; j++) {
+    for(; j < _station.get<int>("num_bikes_available") ; j++) {
       
       //234,106,32
       //198,21,1
@@ -206,7 +206,7 @@ void loop() {
       delay(delayval);
     }
 
-    for(; j < fuckYou.get<int>("num_bikes_available") + fuckYou.get<int>("num_docks_available"); j++) {
+    for(; j < _station.get<int>("num_bikes_available") + _station.get<int>("num_docks_available"); j++) {
       
       //82,45,128
       //10,2,36
