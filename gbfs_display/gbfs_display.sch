@@ -114,7 +114,7 @@ U 1 1 5A07B57F
 P 5150 2700
 F 0 "R1" V 5230 2700 50  0000 C CNN
 F 1 "470Ω" V 5150 2700 50  0000 C CNN
-F 2 "Resistors_ThroughHole:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 5080 2700 50  0001 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 5080 2700 50  0001 C CNN
 F 3 "" H 5150 2700 50  0000 C CNN
 	1    5150 2700
 	0    1    1    0   
