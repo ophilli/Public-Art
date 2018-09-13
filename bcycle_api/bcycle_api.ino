@@ -16,7 +16,8 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
 #include <ArduinoJson.h>
-#include <Adafruit_NeoPixel.h>
+//#include <Adafruit_NeoPixel.h>
+#include "NeoPixel_Ring.h"
 #ifdef __AVR__
   #include <avr/power.h>
 #endif
@@ -26,6 +27,22 @@
 
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+NeoPixel_Ring rings[5] = {
+  NeoPixel_Ring(&pixels, 0, 16), 
+  NeoPixel_Ring(&pixels, 16, 16), 
+  NeoPixel_Ring(&pixels, 32, 16), 
+  NeoPixel_Ring(&pixels, 64, 16),
+  NeoPixel_Ring(&pixels, 48, 16) 
+};
+
+  // There are 16 pixels per ring - and 5 rings
+  // 0 - 15
+  // 16 - 31
+  // 32 - 47
+  // 48 - 63
+  // 64 - 79
+  
+
 
 int delayval = 100;
 int brightDivisor = 100;
@@ -194,28 +211,7 @@ void loop() {
 
   for(int i = 0; i < 5; i++) {
     JsonObject& _station = _stations[i];
-    int j = 0;
-    for(; j < _station.get<int>("num_bikes_available") ; j++) {
-      
-      //234,106,32
-      //198,21,1
-      pixels.setPixelColor((i*16)+j, pixels.Color(198,21,1)); // set pixels to gamma corrected clemson orange.
-
-      pixels.show();
-
-      delay(delayval);
-    }
-
-    for(; j < _station.get<int>("num_bikes_available") + _station.get<int>("num_docks_available"); j++) {
-      
-      //82,45,128
-      //10,2,36
-      pixels.setPixelColor((i*16)+j, pixels.Color(10,2,36)); // set pixels to gamma corrected regalia.
-
-      pixels.show();
-
-      delay(delayval);
-    }
+    rings[i].update_ring(_station.get<int>("num_bikes_available"), _station.get<int>("num_docks_available"));
   }
   jsonBuffer.clear();
   delay(delayval*10*60);
